@@ -1,0 +1,23 @@
+.footer {
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.container {
+    margin-bottom: 19rem;
+}
+
+.About-section {
+    border: solid 2px rgb(110, 110, 110);
+    border-radius: 5px;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 16rem;
+}
+
+.para {
+    color: rgb(110, 110, 110);
+}
+

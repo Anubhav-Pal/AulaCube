@@ -37,7 +37,7 @@ export default function AddNewTodo({ addTask }) {
                     <label className="visually-hidden" htmlFor="desc">Task description</label>
                     <input type="text" value={desc} onChange={handleDescChange} className="form-control" id="desc" placeholder="Enter task description" />
                     <br></br>
-                    <select class="form-select" onChange={handlePriorityChange} value={priority}>
+                    <select className="form-select" onChange={handlePriorityChange} value={priority}>
                         <option disabled selected value="null">Set priority level</option>
                         <option value="low">low</option>
                         <option value="medium">medium</option>

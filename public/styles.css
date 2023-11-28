@@ -33,3 +33,7 @@ body {
     /* height: 20rem; */
     min-height: 20rem;
 }
+
+.task-operation{
+    display: flex;
+}

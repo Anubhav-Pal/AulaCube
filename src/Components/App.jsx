@@ -3,12 +3,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Todos from "./Todos";
 import AddNewTodo from "./AddNewTodo";
+import EditTodo from "./EditTodo";
 import { useState, useEffect } from "react";
 
 
 function App() {
     
-    const [todoList, updateList] = useState(initTask);
     let initTask;
     // this code fetches the data in local storage and give it to the todoList using hooks
     if (localStorage.getItem('todoList') === null) {
@@ -17,11 +17,13 @@ function App() {
     else {
         initTask = JSON.parse(localStorage.getItem('todoList'));
     }
+    const [todoList, updateList] = useState(initTask);
+    const [editTask, setEditTask] = useState({})
 
     //function to add a new task
     const addTask = (title, desc, priority) => {
         if (todoList.length === 0) { var key = 1; }
-        else {2
+        else {
             key = todoList[todoList.length - 1].key + 1;
         }
         const myTask = {
@@ -49,15 +51,9 @@ function App() {
 
     //function to edit the task
     const handleTaskEdit = (noteItem) => {
-        console.log("I am onEdit.", noteItem);
-
-        updateList(todoList.filter((e) => {
-            return e !== noteItem;
-        })
-        )
-
-        localStorage.setItem("todoList", JSON.stringify(todoList))
+        setEditTask(noteItem);
     }
+    console.log(editTask);
 
 
 
@@ -69,9 +65,13 @@ function App() {
         <div>
             <Header title="AulaTask" />
             {/* Form for creating and editing tasks */} 
-            <AddNewTodo addTask={addTask} />
+            <div className="task-operation container">
+
+            <AddNewTodo addTask={addTask} title={editTask.title} desc={editTask.desc} priority={editTask.priority}  />
+            <EditTodo addTask={addTask} editedTask={editTask}/>
+            </div>
             {/* List of all tasks with their priorities */}
-            <Todos todoList={todoList} onDelete={onDelete} onEdit={handleTaskEdit} />
+            <Todos todoList={todoList} onDelete={onDelete}  onEdit={handleTaskEdit}/>
             <Footer />
         </div>
     );

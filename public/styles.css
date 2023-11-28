@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .footer {
     position: relative;
     width: 100%;
@@ -5,14 +9,17 @@
     bottom: 0;
 }
 
-.container {
+.listContainer {
     margin-bottom: 19rem;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .About-section {
     border: solid 2px rgb(110, 110, 110);
     border-radius: 5px;
-    padding: 50px;
+    padding-: 50px;
     margin-top: 50px;
     margin-bottom: 16rem;
 }
@@ -21,3 +28,8 @@
     color: rgb(110, 110, 110);
 }
 
+.todo {
+    width: 30%;
+    /* height: 20rem; */
+    min-height: 20rem;
+}

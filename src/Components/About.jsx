@@ -4,13 +4,12 @@ export default function About() {
     return (
         <div className='container About-section'>
             <h4>About us</h4>
-            <p className='para'>Welcome to our note-taking website! Our platform is designed to help you keep track of your thoughts, ideas, and to-do lists in one convenient location.
+            <p className='para'>
+                AulaCube:
+                Bringing parents, schools, and technology together.
+                AulaCube is a forward-thinking ed-tech company that brings together parents, schools, and technology with the student at the center. Our name, 'AulaCube,' is inspired by the Latin word for 'classroom' (Aula) and represents the synergy of the three dimensions - parents, schools, and technology - that empower students.
 
-                With our easy-to-use interface, you can create new notes and add them to your collection in just a few clicks. Whether you're jotting down a quick reminder, drafting a detailed plan, or organizing your priorities, our platform makes it simple to create and manage your notes.
-
-                But that's not all - our website also includes powerful data storage capabilities to help ensure that your notes are safe and secure. 
-
-                So why wait? Sign up for our note-taking website today and start capturing your ideas in style!</p>
+                We offer an integrated education tech ecosystem that fosters collaboration and transparent communication between parents and educators. Our AI-driven School Management System offers real-time insights into students' academic and extracurricular progress. Join us as we reshape the educational experience with AulaCube, creating an enriching and supportive environment for every student's journey.</p>
         </div>
     )
 }

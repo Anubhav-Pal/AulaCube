@@ -1,20 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function AddNewTodo({ addTask, editedTask }) {
-    const [title, setTitle] = useState(editedTask.title);
-    const [desc, setDesc] = useState(editedTask.content);
-    const [priority, setPriority] = useState(editedTask.priority);
+export default function EditTodo({ addTask, editedTask }) {
+    const [title, setTitle] = useState("");
+    const [desc, setDesc] = useState("");
+    const [priority, setPriority] = useState(null);
 
+    useEffect(() => {
+        if (editedTask) {
+            setTitle(editedTask.title || "");
+            setDesc(editedTask.content || "");
+            setPriority(editedTask.priority || null);
+        }
+    }, [editedTask]);
+    
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
     }
-    const handleDescChange = (event) => {
+    const handleDescChange = (event) => {   
         setDesc(event.target.value);
     }
     const handlePriorityChange = (event) => {
         setPriority(event.target.value);
     }
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!title || !desc || !priority || priority === "Set priority level") {
@@ -29,7 +37,7 @@ export default function AddNewTodo({ addTask, editedTask }) {
     return (
         <div className='container my-3'>
             <form className="row gy-2 gx-3 align-items-center" onSubmit={handleSubmit}>
-                <h4 className='mx-2' >Edit a task</h4>
+                <h4 className='mx-2' >Update a task</h4>
                 <div className="">
                     <label className="visually-hidden" htmlFor="title">Task name</label>
                     <input type="text" value={title} onChange={handleTitleChange} className="form-control" id="title" placeholder="Enter task title" />
@@ -45,7 +53,7 @@ export default function AddNewTodo({ addTask, editedTask }) {
                     </select>
                 </div>
                 <div className="mt-4">
-                    <button type="submit" className="btn btn-outline-success btn-sm ">Add Task</button>
+                    <button type="submit" className="btn btn-outline-success btn-sm ">Update Task</button>
                 </div>
             </form>
         </div>

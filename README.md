@@ -44,7 +44,8 @@ npm (Node Package Manager)
 Installation
 Clone the repository:
 
-git clone https://github.com/your-username/AulaTask.git
+git clone [https://github.com/your-username/AulaTask.git](https://github.com/Anubhav-Pal/AulaCube.git)
+
 <br/>
 Navigate to the project directory
 cd AulaTask
